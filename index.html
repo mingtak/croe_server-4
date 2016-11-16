@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微笑365</title>
+<meta name="keywords" content="微笑365, 微笑加倍, 健康倍速, 微笑加倍　健康倍速, 倍速" />
+<link href="web.css" rel="stylesheet" type="text/css" />
+<link href="styphoto.css" rel="stylesheet" type="text/css" />
+
+<SCRIPT type=text/javascript src="js/jquery.js"></SCRIPT>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-82777510-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<?php include_once("analyticstracking.php") ?>
+
+
+</head>
+
+<body onload="MM_preloadImages('images/btn-01b.jpg','images/btn-02b.jpg','images/btn-03b.jpg','images/btn-04b.jpg','images/btn-05b.jpg')">
+<div id="all" align="center" >
+<div id="bg">
+<!--menu-->
+<div id="m_top_menu">手機板選單</div>
+<div id="top_menu">
+<ul>
+<li><a href="index.html" class="white-blink">回首頁</a></li>
+<li><a href="p01.html" class="white-blink">活動辦法</a></li>
+<li><a href="p02.html" class="white-blink">照片走廊</a></li>
+<li><a href="p03.html" class="white-blink">參加活動</a></li>
+<li><a href="p04.html" class="white-blink">得獎專區</a></li>
+<li><a href="http://fresenius-kabi.megais.com/2015campaign/?utm_source=google-keyword" target="_blank" class="white-blink">癌友營養補充</a></li>
+</ul>
+</div>
+<!--menu end-->
+<!--------------圖片輪播開始--------------->
+<DIV id=play>
+<DIV id=play_bg></DIV>
+<DIV id=play_text>
+  <UL>
+    <LI>1</LI>
+    <LI>2</LI>
+    <LI>3</LI>
+    <LI>4</LI>
+  </UL>
+</DIV>
+<DIV id=play_list>
+  <A href="#"><IMG border=0 alt=另開新視窗 src="images/banner-01.jpg"></A>
+  <A href="#"><IMG border=0 alt=另開新視窗 src="images/banner-02.jpg"></A>
+  <A href="#"><IMG border=0 alt=另開新視窗 src="images/banner-03.jpg"></A>
+  <A href="#"><IMG border=0 alt=另開新視窗 src="images/banner-04.jpg"></A>
+</DIV>
+</DIV>
+<SCRIPT type=text/javascript>
+var t = n = 0, count = $("#play_list a").size();
+$(function(){	
+	$("#play_list a:not(:first-child)").hide();
+
+	$("#play_text li:first-child").css({"background":"#fff",'color':'#000'});
+	$("#play_info").click(function(){window.open($("#play_list a:first-child").attr('href'), "_blank")});
+	$("#play_text li").click(function() {
+		var i = $(this).text() - 1;
+		n = i;
+		if (i >= count) return;
+
+		$("#play_info").unbind().click(function(){window.open($("#play_list a").eq(i).attr('href'), "_blank")})
+		$("#play_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+		$(this).css({"background":"#fff",'color':'#000'}).siblings().css({"background":"#000",'color':'#fff'});
+	});
+	t = setInterval("showAuto()", 4000);
+	$("#play").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 4000);});
+})
+
+function showAuto()
+{
+	n = n >= (count - 1) ? 0 : ++n;
+	$("#play_text li").eq(n).trigger('click');
+}
+</SCRIPT>
+<!--------------圖片輪播結束--------------->
+<!--bigsmile-->
+<div id="bigsmile"><img src="images/big-smile.png" /></div>
+<!--bigsmile end-->
+<div id="wrapper">
+<!--dialog-->
+<div id="dialog"><img src="images/dialog.png" /></div>
+<!--dialog end-->
+<!--words-->
+<div id="index-words">
+  <img src="images/index-words.jpg" />
+  <p class="word-big-black">微笑是一種關懷及支持的力量，為了幫助癌友集氣，我們發起募集365張病友微笑照片的活動。</p>
+  <p>&nbsp;</p>
+  <p class="word-big-black">即日起至10月31日，不論您是癌友或是親朋好友，只要您秀出微笑圖案及「微笑加倍　健康倍速」標語，上傳至活動網站，成功集氣，即有機會獲得超值好禮喔！</p>
+</div>
+<div id="index-btn">
+<ul>
+<li style="margin-left:0;"><a href="p01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','images/btn-01b.jpg',1)"><img src="images/btn-01.jpg" id="Image9" /></a></li>
+<li><a href="p02.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','images/btn-02b.jpg',1)"><img src="images/btn-02.jpg" id="Image10" /></a></li>
+<li><a href="p03.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','images/btn-03b.jpg',1)"><img src="images/btn-03.jpg" id="Image11" /></a></li>
+<li><a href="p04.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','images/btn-04b.jpg',1)"><img src="images/btn-04.jpg" id="Image12" /></a></li>
+<li><a href="http://fresenius-kabi.megais.com/2015campaign/?utm_source=google-keyword" target="_blank" onmouseover="MM_swapImage('Image13','','images/btn-05b.jpg',1)" onmouseout="MM_swapImgRestore()"><img src="images/btn-05.jpg" id="Image13" /></a></li>
+</ul>
+</div>
+<!--words end-->
+</div>
+<!--footer-->
+<div id="footer">
+<div class="word-blue" id="footer-01">
+  <div id="footer-copy">Copyright Fresenius Kabi © 2016</div>
+  <div id="footer-logo"><img src="images/logo-01.gif" style="margin-right:12px;" /><img src="images/logo-02.gif" /></div>
+</div>
+</div>
+<!--footer end-->
+</div>
+</div>
+<!--控制手機版選單-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="js/mmenu.js"></script>
+</body>
+</html>
